@@ -1,0 +1,12 @@
+<mat-card-header> 
+<h2>Message Details</h2>
+</mat-card-header>
+<mat-dialog-content>
+  <p><strong>ID:</strong> {{ data.id }}</p>
+  <p><strong>Received At:</strong> {{ data.receivedAt | date:'dd/MM/yyyy HH:mm:ss' }} </p>
+  <p><strong>Content:</strong> {{ data.content }} </p>
+  <p><strong>Partner ID:</strong> {{data.partner.id}} </p>
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button mat-button mat-dialog-close>Cancel</button>
+</mat-dialog-actions>

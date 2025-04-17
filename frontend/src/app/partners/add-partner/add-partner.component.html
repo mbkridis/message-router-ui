@@ -1,0 +1,50 @@
+<mat-card-header>
+    <h2 mat-dialog-title>Add Partner</h2>
+</mat-card-header>
+
+<mat-dialog-content>
+  <form (ngSubmit)="onAddPartner()" class="partner-form">
+    <mat-form-field appearance="outline">
+      <mat-label>Alias</mat-label>
+      <input matInput [(ngModel)]="newPartner.alias" name="alias" required>
+    </mat-form-field>
+    
+    <mat-form-field appearance="outline">
+      <mat-label>Type</mat-label>
+      <input matInput [(ngModel)]="newPartner.type" name="type" required>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Direction</mat-label>
+      <mat-select matInput [(ngModel)]="newPartner.direction" name="direction" required>
+        <mat-option *ngFor="let dir of directions" [value]="dir">
+          {{ dir }}
+        </mat-option>
+        </mat-select>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Application</mat-label>
+      <input matInput [(ngModel)]="newPartner.application" name="application" required>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Processed Flow Type</mat-label>
+      <mat-select matInput [(ngModel)]="newPartner.processedFlowType" name="processedFlowType" required>
+      <mat-option *ngFor="let type of processedFlowTypes" [value]="type">
+        {{ type }}
+      </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Description</mat-label>
+      <input matInput [(ngModel)]="newPartner.description" name="description" required>
+    </mat-form-field>
+
+    <div mat-dialog-actions>
+      <button mat-button type="button" (click)="onNoClick()">Cancel</button>
+      <button mat-button type="submit" color="primary">Add</button>
+    </div>
+  </form>
+</mat-dialog-content>

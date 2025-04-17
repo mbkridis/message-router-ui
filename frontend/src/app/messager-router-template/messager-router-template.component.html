@@ -1,0 +1,51 @@
+<mat-toolbar color="primary">
+    <button mat-icon-button (click)="sideMenu.toggle()">
+        <mat-icon>menu</mat-icon>
+    </button>
+    <span class="spacer"></span>
+    <button routerLink="/home" mat-button>Home</button>
+    <button routerLink="/profile" mat-button>Profile</button>
+    <!--<button mat-button [matMenuTriggerFor]="importMenu">
+        <mat-icon iconPositionEnd>keyboard_arrow_down</mat-icon>
+        Import
+    </button>
+    <mat-menu #importMenu>
+        <button mat-menu-item>Load Students</button>
+        <button mat-menu-item>Load Payments</button>
+    </mat-menu> -->
+    <button routerLink="/login" mat-raised-button color="accent">Logout</button>
+</mat-toolbar>
+
+<mat-drawer-container>
+    <mat-drawer #sideMenu opened="true" position="start" mode="side">
+        <mat-list>
+            <mat-list-item>
+                <button routerLink="/dashboard" mat-button>
+                    <mat-icon>dashboard</mat-icon>
+                    DashBoard
+                </button>
+            </mat-list-item>
+            <mat-list-item>
+                <button routerLink="/partners" mat-button>
+                    <mat-icon>contact_mail</mat-icon>
+                    Partners
+                </button>
+            </mat-list-item>
+            <mat-list-item>
+                <button routerLink="/messages" mat-button>
+                    <mat-icon>message</mat-icon>
+                    Messages
+                </button>
+            </mat-list-item>
+        </mat-list>
+    </mat-drawer>
+
+    <mat-drawer-content>
+        <div style="min-height: 800px">
+        <router-outlet>
+
+        </router-outlet>
+        </div>
+    </mat-drawer-content>
+
+</mat-drawer-container>

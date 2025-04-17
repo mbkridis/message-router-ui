@@ -1,0 +1,30 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.container {
+    padding: 10px;
+}
+
+.action-bar {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+    margin: 16px 0;
+  }
+  
+  .filter-field {
+    flex: 1;
+    min-width: 200px;
+  }
+  
+  button {
+    white-space: nowrap;
+  }
+  .snackbar-error {
+    background-color: #f44336;
+    color: white;
+  }
+  
